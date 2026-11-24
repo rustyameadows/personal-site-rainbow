@@ -144,7 +144,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-o
   align-self: end;
   margin-bottom: var(--gutter);
   font: 400 var(--wordmark-default-size) / 1.02 var(--display);
-  letter-spacing: -0.05em;
+  letter-spacing: -0.025em;
   writing-mode: vertical-rl;
   transform: rotate(180deg);
 }
@@ -345,9 +345,11 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-o
 
 .section-intro h1 {
   font: 400 clamp(3.4rem, 8.2vw, 9rem) / 0.98 var(--display);
-  letter-spacing: -0.045em;
+  letter-spacing: -0.02em;
   overflow-wrap: break-word;
 }
+
+.work-title-suffix { margin-inline-start: -0.125em; }
 
 .section-intro p {
   max-width: 34em;

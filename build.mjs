@@ -250,6 +250,10 @@ function renderArchive(section) {
 }
 
 function sectionPage(section) {
+  const title = escapeHtml(section.title);
+  const heading = section.slug === 'stuff-ive-made'
+    ? title.replace('I’ve', 'I’<span class="work-title-suffix">ve</span>')
+    : title;
   return document(`${section.title} · ${siteName}`, section.description, 'section-page', `
 <div class="section-frame">
   <header class="section-header">
@@ -259,7 +263,7 @@ function sectionPage(section) {
   </header>
   <main class="section-main">
     <div class="section-intro">
-      <h1>${escapeHtml(section.title)}</h1>
+      <h1>${heading}</h1>
       <p>${escapeHtml(section.description)}</p>
     </div>
     ${renderArchive(section)}
