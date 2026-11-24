@@ -1,0 +1,51 @@
+export const sections = [
+  {
+    slug: 'about',
+    title: 'About',
+    description: 'I’m Rusty Meadows, a creative technologist and product maker.',
+    color: '#BD8AD9',
+    hoverColor: '#C87DEF',
+  },
+  {
+    slug: 'context',
+    title: 'Context',
+    description: 'I keep track of what’s changed how I think and work.',
+    color: '#8590DA',
+    hoverColor: '#7F8BF5',
+  },
+  {
+    slug: 'favs',
+    title: 'Favorites',
+    description: 'I save things I love, from books and pictures to places.',
+    color: '#72BDDF',
+    hoverColor: '#47C1F1',
+  },
+  {
+    slug: 'technology',
+    title: 'Technology',
+    description: 'I bring new technology into creative work and help people build with it.',
+    color: '#81BD72',
+    hoverColor: '#6BC453',
+  },
+  {
+    slug: 'tools',
+    title: 'Tools',
+    description: 'I build tools for myself and for other people who make things.',
+    color: '#F8CF5B',
+    hoverColor: '#FFCD2D',
+  },
+  {
+    slug: 'community',
+    title: 'Community',
+    description: 'I help build communities around shared work and interests.',
+    color: '#FA9953',
+    hoverColor: '#FC8C31',
+  },
+  {
+    slug: 'stuff-ive-made',
+    title: 'Stuff I’ve Made',
+    description: 'I make things for screens, shelves, and rooms full of people.',
+    color: '#F36450',
+    hoverColor: '#FF5641',
+  },
+];

@@ -1,0 +1,53 @@
+<details class="type-lab" open>
+  <summary>Type lab</summary>
+  <form id="lab" class="lab-controls">
+    <label class="lab-band">Band <select name="band"></select></label>
+    <label class="lab-check lab-wordmark"><input type="checkbox" name="wordmark-guide"> Show wordmark baseline</label>
+    <label class="lab-check"><input type="checkbox" name="guide"> Show band centerline</label>
+    <label class="lab-check"><input type="checkbox" name="baseline"> Show type baseline</label>
+
+    <fieldset>
+      <legend>Typography</legend>
+      <div class="lab-slider">
+        <div class="lab-slider-heading"><label for="size">Size</label><span class="lab-value"><input type="number" inputmode="decimal" data-range="size" aria-label="Size percentage"> % <output id="resolved-size" for="size" aria-hidden="true"></output></span></div>
+        <input type="range" name="size" id="size" min="40" max="180" step="0.1" value="100">
+      </div>
+      <div class="lab-slider">
+        <div class="lab-slider-heading"><label for="tracking">Tracking</label><span class="lab-value"><input type="number" inputmode="decimal" data-range="tracking" aria-label="Tracking in em"> em</span></div>
+        <input type="range" name="tracking" id="tracking" min="-0.1" max="0.2" step="0.001" value="0.055">
+      </div>
+      <div class="lab-slider">
+        <div class="lab-slider-heading"><label for="weight">Weight</label><input type="number" inputmode="numeric" data-range="weight" aria-label="Weight value"></div>
+        <input type="range" name="weight" id="weight" min="100" max="900" value="560">
+      </div>
+      <div class="lab-slider">
+        <div class="lab-slider-heading"><label for="roundness">Roundness</label><input type="number" inputmode="numeric" data-range="roundness" aria-label="Roundness value"></div>
+        <input type="range" name="roundness" id="roundness" min="0" max="100" value="90">
+      </div>
+      <div class="lab-slider">
+        <div class="lab-slider-heading"><label for="optical-size">Optical size</label><input type="number" inputmode="decimal" data-range="optical-size" aria-label="Optical size value" disabled></div>
+        <input type="range" name="optical-size" id="optical-size" min="9" max="32" step="0.1" value="14" disabled>
+      </div>
+      <label class="lab-check"><input type="checkbox" name="auto-optical" checked> Auto optical size</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Arc &amp; placement</legend>
+      <div class="lab-slider">
+        <div class="lab-slider-heading"><label for="bend">Arc bend</label><span class="lab-value"><input type="number" inputmode="decimal" data-range="bend" aria-label="Arc bend percentage"> %</span></div>
+        <input type="range" name="bend" id="bend" min="0" max="170" step="0.1" value="76">
+      </div>
+      <div class="lab-slider">
+        <div class="lab-slider-heading"><label for="offset">Lower label</label><span class="lab-value"><input type="number" inputmode="decimal" data-range="offset" aria-label="Lower label in pixels"> px</span></div>
+        <input type="range" name="offset" id="offset" min="-50" max="50" step="0.1" value="0">
+      </div>
+    </fieldset>
+
+    <div class="lab-actions">
+      <button type="button" id="test-hover" aria-pressed="false">Test hover</button>
+      <button type="reset">Reset</button>
+      <button type="button" id="copy-settings">Copy settings</button>
+    </div>
+    <output id="copy-status" role="status"></output>
+  </form>
+</details>

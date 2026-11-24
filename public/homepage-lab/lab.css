@@ -1,0 +1,118 @@
+.type-lab {
+  --lab-top: calc(var(--home-contact-top) + var(--home-contact-size) + 0.5rem);
+  position: fixed;
+  z-index: 10;
+  inset-block-start: var(--lab-top);
+  inset-inline-end: var(--contact-inset);
+  inline-size: min(15.5rem, calc(100% - 2rem));
+  border: 1px solid rgb(37 34 31 / 14%);
+  border-radius: 0.55rem;
+  background: rgb(250 247 238 / 95%);
+  box-shadow: 0 2px 12px rgb(37 34 31 / 8%);
+  color: var(--ink);
+  font: 450 0.875rem / 1.35 var(--ui);
+  accent-color: #5b4d73;
+}
+
+.type-lab:not([open]) { inline-size: max-content; }
+
+.type-lab summary {
+  padding: 0.5rem 0.7rem;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.lab-controls {
+  max-block-size: calc(100svh - var(--lab-top) - 3.4rem);
+  overflow: auto;
+  overscroll-behavior: contain;
+  padding: 0 0.7rem 0.65rem;
+}
+
+.type-lab :is(button, input, select) { font: inherit; color: inherit; }
+.type-lab :is(button, select, input[type='checkbox']) { cursor: pointer; }
+.type-lab :focus-visible { outline: 2px solid #654c91; outline-offset: 2px; }
+
+.lab-band, .lab-check, .lab-actions { display: flex; align-items: center; gap: 0.4rem; }
+.lab-band select { min-inline-size: 0; flex: 1; }
+
+.lab-check { margin-block-start: 0.45rem; }
+.lab-check input { inline-size: 1rem; block-size: 1rem; margin: 0; flex: none; }
+
+.lab-controls fieldset {
+  min-inline-size: 0;
+  margin: 0.75rem 0 0;
+  padding: 0.4rem 0 0;
+  border: 0;
+  border-block-start: 1px solid rgb(37 34 31 / 14%);
+}
+
+.lab-controls legend { padding-inline-end: 0.4rem; font-weight: 650; }
+.lab-slider { display: grid; }
+.lab-slider + .lab-slider { margin-block-start: 0.3rem; }
+.lab-slider-heading, .lab-value { display: flex; align-items: baseline; gap: 0.25rem; }
+.lab-slider-heading { justify-content: space-between; }
+.lab-value, .lab-slider input[type='number'] { font-variant-numeric: tabular-nums; }
+.lab-value output { white-space: nowrap; opacity: 0.75; font-size: 0.8rem; }
+.lab-slider input[type='range'] { inline-size: 100%; min-block-size: 1.2rem; margin: 0; }
+.lab-slider input[type='number'] {
+  inline-size: 3.8rem;
+  min-block-size: 1.45rem;
+  padding: 0.02rem 0.24rem;
+  border: 1px solid rgb(37 34 31 / 20%);
+  border-radius: 0.25rem;
+  background: rgb(255 255 255 / 45%);
+  text-align: end;
+  appearance: textfield;
+}
+.lab-slider input[type='number']::-webkit-inner-spin-button { appearance: none; }
+.lab-slider input:disabled { opacity: 0.45; }
+
+.lab-actions { justify-content: end; margin-block-start: 0.65rem; }
+.lab-actions button { white-space: nowrap; }
+#test-hover { margin-inline-end: auto; }
+.type-lab :is(button, select) {
+  min-block-size: 1.75rem;
+  padding: 0.15rem 0.4rem;
+  border: 1px solid rgb(37 34 31 / 22%);
+  border-radius: 0.3rem;
+  background: rgb(255 255 255 / 46%);
+}
+#test-hover[aria-pressed='true'] { border-color: #9d90ab; background: #e8e1ee; }
+
+#copy-status { display: block; margin-block-start: 0.3rem; text-align: end; }
+#copy-status:empty { display: none; }
+
+.wordmark-curve {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.wordmark-curve[hidden], .wordmark-guide { display: none; }
+.wordmark-curve text { fill: var(--ink); }
+.wordmark-curve textPath { pointer-events: auto; user-select: text; -webkit-user-select: text; }
+.wordmark-guide { fill: none; stroke: #70559c; stroke-width: 1.25; }
+[data-wordmark-guide] .wordmark-guide { display: block; }
+
+@media (forced-colors: none) {
+  .wordmark-curve :is(text, textPath)::selection { color: var(--ink); background-color: var(--wordmark-selection); }
+  [data-selection-painted] .wordmark-curve :is(text, textPath)::selection { background-color: transparent; }
+}
+
+@media (width > 44rem) {
+  [data-wordmark-arc] .wordmark { opacity: 0; user-select: none; -webkit-user-select: none; }
+}
+
+@media (max-width: 44rem) {
+  .type-lab {
+    inset-block: auto max(0.7rem, env(safe-area-inset-bottom));
+    inset-inline-end: 0.7rem;
+  }
+  .lab-controls { max-block-size: 52svh; }
+  .lab-slider input[type='number'] { font-size: 1rem; }
+  .lab-wordmark, .wordmark-curve { display: none; }
+}
